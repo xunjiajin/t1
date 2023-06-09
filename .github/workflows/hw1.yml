@@ -1,0 +1,20 @@
+# Workflow 的名称
+name: Run hello-world script
+
+# 触发 Workflow 的事件
+on: push
+
+# 定义一个或多个任务
+jobs:
+  # 任务的名称
+  run_script:
+    # 运行任务的环境
+    runs-on: ubuntu-latest
+    # 任务的步骤
+    steps:
+      # 使用 actions/checkout@v2 动作来检出代码
+      - uses: actions/checkout@v2
+      # 使用 run 来执行 shell 命令
+      - name: Run hw2.sh script
+        run: bash hw2.sh
+
